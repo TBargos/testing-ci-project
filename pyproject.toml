@@ -1,0 +1,17 @@
+[tool.black]
+line-length = 88
+exclude = '''
+/(
+    venv
+  | \.git
+  | __pycache__
+)/
+'''
+
+[tool.isort]
+profile = "black"
+skip = ["venv", "__pycache__", ".git"]
+
+[tool.mypy]
+python_version = "3.14"
+explicit_package_bases = true
