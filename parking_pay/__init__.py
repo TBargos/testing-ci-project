@@ -13,6 +13,7 @@ def create_app():
     db.init_app(app)
 
     from . import routes
+
     routes.register_routes(app)
 
     with app.app_context():

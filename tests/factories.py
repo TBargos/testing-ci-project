@@ -1,4 +1,5 @@
 import random
+
 import factory
 from faker import Faker
 
@@ -32,6 +33,4 @@ class ParkingFactory(factory.Factory):
     count_places = factory.Faker("random_int", min=1, max=200)
 
     # доступных мест изначально столько же
-    count_available_places = factory.LazyAttribute(
-        lambda obj: obj.count_places
-    )
+    count_available_places = factory.LazyAttribute(lambda obj: obj.count_places)

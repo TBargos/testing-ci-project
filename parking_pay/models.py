@@ -1,8 +1,9 @@
-from . import db
 from sqlalchemy import UniqueConstraint
 
+from . import db
 
-class Client(db.Model):
+
+class Client(db.Model):  # type: ignore[name-defined]
     __tablename__ = "client"
 
     id = db.Column(db.Integer, primary_key=True)
@@ -14,7 +15,7 @@ class Client(db.Model):
     parkings = db.relationship("ClientParking", back_populates="client")
 
 
-class Parking(db.Model):
+class Parking(db.Model):  # type: ignore[name-defined]
     __tablename__ = "parking"
 
     id = db.Column(db.Integer, primary_key=True)
@@ -26,7 +27,7 @@ class Parking(db.Model):
     clients = db.relationship("ClientParking", back_populates="parking")
 
 
-class ClientParking(db.Model):
+class ClientParking(db.Model):  # type: ignore[name-defined]
     __tablename__ = "client_parking"
 
     id = db.Column(db.Integer, primary_key=True)
